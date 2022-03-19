@@ -1,5 +1,7 @@
 from typing import Dict, Optional
 
+from ctfd.configs import ConfigsClient
+
 from . import utils
 from .api_result import APIResult
 
@@ -16,3 +18,5 @@ class CTFd:
     def __init__(self, host: str, token: str, /, *, verify_tls: bool = True) -> None:
         self._host = host
         self._session = utils.create_session(verify_tls=verify_tls, token=token)
+
+        self.configs = ConfigsClient(self)
