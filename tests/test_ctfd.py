@@ -1,5 +1,5 @@
-from ctfd import __version__
+from ctfd.version import VERSION
 
 
 def test_version():
-    assert __version__ == "0.1.0"
+    assert VERSION == "0.1.0"
