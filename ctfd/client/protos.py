@@ -1,7 +1,8 @@
-from typing import Protocol
+from typing import Dict, Optional, Protocol
 
-import requests
+from .api_result import APIResult
 
 
 class IClient(Protocol):
-    _session: requests.Session
+    def get(self, uri: str, /, *, params: Optional[Dict[str, str]] = None) -> APIResult:
+        ...
